@@ -78,29 +78,13 @@ namespace Rivet {
 	book(hInvariantPTOmega["pp_-1.8<yCM<1.8"], 4, 1, 1);
 	book(hInvariantPTOmega["pPB_-1.8<yCM<1.8"], 4, 1, 2);
 	
-	//R_pPB for -1.8<y_CM<1.8 in pPB (fig 3)
-	//book(RpPBFullK0s["RpPB_K0S_-1.8<yCM<1.8"], 5, 1, 1);
-	//book(RpPBFullLambda["RpPB_Lambda_-1.8<yCM<1.8"], 6, 1, 1);
-	//book(RpPBFullXi["RpPB_Xi_-1.8<yCM<1.8"], 7, 1, 1);
-	//book(RpPBFullOmega["RpPB_Omega_-1.8<yCM<1.8"], 8, 1, 1);
-	
-	//R_pPB for -1.8<y_CM<0 in pPB (fig 4.1)
-	//book(hRpPBLowK0s["RpPB_K0S_-1.8<yCM<0"], 9, 1, 1);
-	//book(hRpPBLowLambda["RpPB_Lambda_-1.8<yCM<0"], 10, 1, 1);
-	//book(hRpPBLowXi["RpPB_Xi_-1.8<yCM<0"], 11, 1, 1);
-	
-	//R_pPB for 0<y_CM<1.8 in pPB (fig 4.2)
-	//book(hRpPBHighK0s["RpPB_K0S_0<yCM<1.8"], 12, 1, 1);
-	//book(hRpPBHighLambda["RpPB_Lambda_0<yCM<1.8"], 13, 1, 1);
-	//book(hRpPBHighXi["RpPB_Xi_0<yCM<1.8"], 14, 1, 1);
-	
 	//Inv. pT of K0S for various y_CM in pPB (fig 5.1)
 	book(hInvariantPTK0SpPB["-1.8<yCM<-1.3"], 15, 1, 1);
 	book(hInvariantPTK0SpPB["-1.3<yCM<-0.8"], 15, 1, 2);
 	book(hInvariantPTK0SpPB["-0.8<yCM<-0.3"], 15, 1, 3);
 	book(hInvariantPTK0SpPB["0.3<yCM<0.8"], 15, 1, 4);
 	book(hInvariantPTK0SpPB["0.8<yCM<1.3"], 15, 1, 5);
-	book(hInvariantPTK0SpPB["0.3<yCM<1.8"], 15, 1, 6);
+	book(hInvariantPTK0SpPB["1.3<yCM<1.8"], 15, 1, 6);
 	
 	//Inv. pT of Lambda for various y_CM in pPB (fig 5.2)
 	book(hInvariantPTLambdapPB["-1.8<yCM<-1.3"], 16, 1, 1);
@@ -182,75 +166,74 @@ namespace Rivet {
 	//R_pPB full for K0s
 	string refname10 = mkAxisCode(5, 1, 1);
 	const Scatter2D& refdata10 = refData(refname10);
-	book(hInvariantPTK0S["pT_pPB_full"], refname10 + "_full_pPB", refdata10);
-	book(hInvariantPTK0S["pT_pp_full"], refname10 + "_full_pp", refdata10);
+	book(hInvariantPTK0S["pPB_full"], refname10 + "_full_pPB", refdata10);
+	book(hInvariantPTK0S["pp_full"], refname10 + "_full_pp", refdata10);
 	book(RpPBFullK0s["pPB/pp_-1.8<yCM<1.8"], refname10);
 	
 	//R_pPB full for Lambda
 	string refname11 = mkAxisCode(6, 1, 1);
 	const Scatter2D& refdata11 = refData(refname11);
-	book(hInvariantPTLambda["pT_pPB_full"], refname11 + "_full_pPB", refdata11);
-	book(hInvariantPTLambda["pT_pp_full"], refname11 + "_full_pp", refdata11);
+	book(hInvariantPTLambda["pPB_full"], refname11 + "_full_pPB", refdata11);
+	book(hInvariantPTLambda["pp_full"], refname11 + "_full_pp", refdata11);
 	book(RpPBFullLambda["pPB/pp_-1.8<yCM<1.8"], refname11);
 	
 	//R_pPB full for Xi
 	string refname12 = mkAxisCode(7, 1, 1);
 	const Scatter2D& refdata12 = refData(refname12);
-	book(hInvariantPTXi["pT_pPB_full"], refname12 + "_full_pPB", refdata12);
-	book(hInvariantPTXi["pT_pp_full"], refname12 + "_full_pp", refdata12);
+	book(hInvariantPTXi["pPB_full"], refname12 + "_full_pPB", refdata12);
+	book(hInvariantPTXi["pp_full"], refname12 + "_full_pp", refdata12);
 	book(RpPBFullXi["pPB/pp_-1.8<yCM<1.8"], refname12);
 	
 	//R_pPB full for Omega
 	string refname13 = mkAxisCode(8, 1, 1);
 	const Scatter2D& refdata13 = refData(refname13);
-	book(hInvariantPTOmega["pT_pPB_full"], refname13 + "_full_pPB", refdata13);
-	book(hInvariantPTOmega["pT_pp_full"], refname13 + "_full_pp", refdata13);
+	book(hInvariantPTOmega["pPB_full"], refname13 + "_full_pPB", refdata13);
+	book(hInvariantPTOmega["pp_full"], refname13 + "_full_pp", refdata13);
 	book(RpPBFullOmega["pPB/pp_-1.8<yCM<1.8"], refname13);
 	
 	//Figure 4.1, R_pPB for -1.8<y_CM<0
 	//R_pPB low for K0s
 	string refname14 = mkAxisCode(9, 1, 1);
 	const Scatter2D& refdata14 = refData(refname14);
-	book(hInvariantPTK0S["pT_pPB_low"], refname14 + "_low_pPB", refdata14);
-	book(hInvariantPTK0S["pT_pp_low"], refname14 + "_low_pp", refdata14);
+	book(hInvariantPTK0S["pPB_low"], refname14 + "_low_pPB", refdata14);
+	book(hInvariantPTK0S["pp_low"], refname14 + "_low_pp", refdata14);
 	book(RpPBLowK0s["pPB/pp_-1.8<yCM<0"], refname14);
 	
 	//R_pPB low for Lambda
 	string refname15 = mkAxisCode(10, 1, 1);
 	const Scatter2D& refdata15 = refData(refname15);
-	book(hInvariantPTLambda["pT_pPB_low"], refname15 + "_low_pPB", refdata15);
-	book(hInvariantPTLambda["pT_pp_low"], refname15 + "_low_pp", refdata15);
+	book(hInvariantPTLambda["pPB_low"], refname15 + "_low_pPB", refdata15);
+	book(hInvariantPTLambda["pp_low"], refname15 + "_low_pp", refdata15);
 	book(RpPBLowLambda["pPB/pp_-1.8<yCM<0"], refname15);
 	
 	//R_pPB low for Xi
 	string refname16 = mkAxisCode(11, 1, 1);
 	const Scatter2D& refdata16 = refData(refname16);
-	book(hInvariantPTXi["pT_pPB_low"], refname16 + "_low_pPB", refdata16);
-	book(hInvariantPTXi["pT_pp_low"], refname16 + "_low_pp", refdata16);
+	book(hInvariantPTXi["pPB_low"], refname16 + "_low_pPB", refdata16);
+	book(hInvariantPTXi["pp_low"], refname16 + "_low_pp", refdata16);
 	book(RpPBLowXi["pPB/pp_-1.8<yCM<0"], refname16);
 	
 	//Figure 4.2, R_pPB for 0<y_CM<1.8
 	//R_pPB high for K0s
 	string refname17 = mkAxisCode(12, 1, 1);
 	const Scatter2D& refdata17 = refData(refname17);
-	book(hInvariantPTK0S["pT_pPB_high"], refname17 + "_high_pPB", refdata17);
-	book(hInvariantPTK0S["pT_pp_high"], refname17 + "_high_pp", refdata17);
+	book(hInvariantPTK0S["pPB_high"], refname17 + "_high_pPB", refdata17);
+	book(hInvariantPTK0S["pp_high"], refname17 + "_high_pp", refdata17);
 	book(RpPBHighK0s["pPB/pp_0<yCM<1.8"], refname17);
 	
 	//R_pPB high for Lambda
 	string refname18 = mkAxisCode(13, 1, 1);
 	const Scatter2D& refdata18 = refData(refname18);
-	book(hInvariantPTLambda["pT_pPB_high"], refname18 + "_high_pPB", refdata18);
-	book(hInvariantPTLambda["pT_pp_high"], refname18 + "_high_pp", refdata18);
+	book(hInvariantPTLambda["pPB_high"], refname18 + "_high_pPB", refdata18);
+	book(hInvariantPTLambda["pp_high"], refname18 + "_high_pp", refdata18);
 	book(RpPBHighLambda["pPB/pp_0<yCM<1.8"], refname18);
 	
 	//R_pPB high for Xi
 	string refname19 = mkAxisCode(14, 1, 1);
 	const Scatter2D& refdata19 = refData(refname19);
-	book(hInvariantPTXi["pT_pPB_high"], refname19 + "_high_pPB", refdata19);
-	book(hInvariantPTXi["pT_pp_high"], refname19 + "_high_pp", refdata19);
+	book(hInvariantPTXi["pPB_high"], refname19 + "_high_pPB", refdata19);
+	book(hInvariantPTXi["pp_high"], refname19 + "_high_pp", refdata19);
 	book(RpPBHighXi["pPB/pp_0<yCM<1.8"], refname19);
-	
 
     }
 
@@ -258,16 +241,204 @@ namespace Rivet {
     /// Perform the per-event analysis
     void analyze(const Event& event) {
     
-
+      Particles chargedParticles = applyProjection<PrimaryParticles>(event, "fs").particles();
+      Particles neutralParticles = applyProjection<PrimaryParticles>(event, "ns").particles();
+      
+      if (collSys == pp)
+	{
+		sow["sow_pp"]->fill();
+		for (Particle p : neutralParticles)
+		{
+			double partPt = p.pT() / GeV;
+			double pt_weight = 1. / (partPt * 2. * M_PI);
+			/////////double deltaPt = 0.;
+			switch (p.pid()) {
+			case 310: // K0S
+			{
+				if(p.rap() < 0) hInvariantPTK0S["pp_-1.8<yCM<0"]->fill(partPt, pt_weight);
+				hInvariantPTK0S["pp_-1.8<yCM<1.8"]->fill(partPt, pt_weight);
+				if(p.rap() > 0) hInvariantPTK0S["pp_0<yCM<1.8"]->fill(partPt, pt_weight);
+				hInvariantPTK0S["pp_full"]->fill(partPt, pt_weight);
+				if(p.rap() < 0) hInvariantPTK0S["pp_low"]->fill(partPt, pt_weight);
+				if(p.rap() > 0) hInvariantPTK0S["pp_high"]->fill(partPt, pt_weight);
+				
+				break;
+			}
+			case 3122: // Lambda
+			{
+				if(p.rap() < 0) hInvariantPTLambda["pp_-1.8<yCM<0"]->fill(partPt, pt_weight);
+				hInvariantPTLambda["pp_-1.8<yCM<1.8"]->fill(partPt, pt_weight);
+				if(p.rap() > 0) hInvariantPTLambda["pp_0<yCM<1.8"]->fill(partPt, pt_weight);
+				hInvariantPTLambda["pp_full"]->fill(partPt, pt_weight);
+				if(p.rap() < 0) hInvariantPTLambda["pp_low"]->fill(partPt, pt_weight);
+				if(p.rap() > 0) hInvariantPTLambda["pp_high"]->fill(partPt, pt_weight);
+				
+				break;
+			}
+		}
+		}
+		
+		for (Particle p : chargedParticles)
+		{
+			double partPt = p.pT() / GeV;
+			double pt_weight = 1. / (partPt * 2. * M_PI);
+			switch (p.pid()) {
+			case 3312: // Xi-
+			{
+				if(p.rap() < 0) hInvariantPTXi["pp_-1.8<yCM<0"]->fill(partPt, pt_weight);
+				hInvariantPTXi["pp_-1.8<yCM<1.8"]->fill(partPt, pt_weight);
+				if(p.rap() > 0) hInvariantPTXi["pp_0<yCM<1.8"]->fill(partPt, pt_weight);
+				hInvariantPTXi["pp_full"]->fill(partPt, pt_weight);
+				if(p.rap() < 0) hInvariantPTXi["pp_low"]->fill(partPt, pt_weight);
+				if(p.rap() > 0) hInvariantPTXi["pp_high"]->fill(partPt, pt_weight);
+				
+				break;
+			}
+			case -3312: // Xi+
+			{
+				if(p.rap() < 0) hInvariantPTXi["pp_-1.8<yCM<0"]->fill(partPt, pt_weight);
+				hInvariantPTXi["pp_-1.8<yCM<1.8"]->fill(partPt, pt_weight);
+				if(p.rap() > 0) hInvariantPTXi["pp_0<yCM<1.8"]->fill(partPt, pt_weight);
+				hInvariantPTXi["pp_full"]->fill(partPt, pt_weight);
+				if(p.rap() < 0) hInvariantPTXi["pp_low"]->fill(partPt, pt_weight);
+				if(p.rap() > 0) hInvariantPTXi["pp_high"]->fill(partPt, pt_weight);
+				
+				break;
+			}
+			case 3334: // Omega-
+			{
+				hInvariantPTOmega["pp_-1.8<yCM<1.8"]->fill(partPt, pt_weight);
+				hInvariantPTOmega["pp_full"]->fill(partPt, pt_weight);
+				
+				break;
+			}
+			case -3334: // Omega+
+			{
+				hInvariantPTOmega["pp_-1.8<yCM<1.8"]->fill(partPt, pt_weight);
+				hInvariantPTOmega["pp_full"]->fill(partPt, pt_weight);
+				
+				break;
+			}
+		}
+	}
+	return;
+	}
+	
+	if (collSys == pPB)
+	{
+		sow["sow_pPB"]->fill();
+		for (Particle p : neutralParticles)
+		{
+			double partPt = p.pT() / GeV;
+			double pt_weight = 1. / (partPt * 2. * M_PI);
+			switch (p.pid()) {
+			case 310: // K0S
+			{
+				if(p.rap() < 0) hInvariantPTK0S["pPB_-1.8<yCM<0"]->fill(partPt, pt_weight);
+				hInvariantPTK0S["PB_-1.8<yCM<1.8"]->fill(partPt, pt_weight);
+				if(p.rap() > 0) hInvariantPTK0S["pPB_0<yCM<1.8"]->fill(partPt, pt_weight);
+				hInvariantPTK0S["pPB_full"]->fill(partPt, pt_weight);
+				if(p.rap() < 0) hInvariantPTK0S["pPB_low"]->fill(partPt, pt_weight);
+				if(p.rap() > 0) hInvariantPTK0S["pPB_high"]->fill(partPt, pt_weight);
+				
+				if(p.rap() < -1.3) hInvariantPTK0SpPB["-1.8<yCM<-1.3"]->fill(partPt, pt_weight);
+				if(p.rap() < -0.8 && > -1.3) hInvariantPTK0SpPB["-1.3<yCM<-0.8"]->fill(partPt, pt_weight);
+				if(p.rap() < -0.3 && > -0.8) hInvariantPTK0SpPB["-0.8<yCM<-0.3"]->fill(partPt, pt_weight);
+				if(p.rap() < 0.8 && > 0.3) hInvariantPTK0SpPB["0.3<yCM<0.8"]->fill(partPt, pt_weight);
+				if(p.rap() < 1.3 && > 0.8) hInvariantPTK0SpPB["0.8<yCM<1.3"]->fill(partPt, pt_weight);
+				if(p.rap() > 1.3) hInvariantPTK0SpPB["1.3<yCM<1.8"]->fill(partPt, pt_weight);
+				
+				if(p.rap() < -1.3) hInvariantPTK0SpPB["HighNeg"]->fill(partPt, pt_weight);
+				if(p.rap() < -0.8 && > -1.3) hInvariantPTK0SpPB["MidNeg"]->fill(partPt, pt_weight);
+				if(p.rap() < -0.3 && > -0.8) hInvariantPTK0SpPB["LowNeg"]->fill(partPt, pt_weight);
+				if(p.rap() < 0.8 && > 0.3) hInvariantPTK0SpPB["LowPos"]->fill(partPt, pt_weight);
+				if(p.rap() < 1.3 && > 0.8) hInvariantPTK0SpPB["MidPos"]->fill(partPt, pt_weight);
+				if(p.rap() > 1.3) hInvariantPTK0SpPB["HighPos"]->fill(partPt, pt_weight);
+				
+				break;
+			}
+			case 3122: // Lambda
+			{
+				if(p.rap() < 0) hInvariantPTLambda["pPB_-1.8<yCM<0"]->fill(partPt, pt_weight);
+				hInvariantPTLambda["pPB_-1.8<yCM<1.8"]->fill(partPt, pt_weight);
+				if(p.rap() > 0) hInvariantPTLambda["pPB_0<yCM<1.8"]->fill(partPt, pt_weight);
+				hInvariantPTLambda["pPB_full"]->fill(partPt, pt_weight);
+				if(p.rap() < 0) hInvariantPTLambda["pPB_low"]->fill(partPt, pt_weight);
+				if(p.rap() > 0) hInvariantPTLambda["pPB_high"]->fill(partPt, pt_weight);
+				
+				if(p.rap() < -1.3) hInvariantPTLambdapPB["-1.8<yCM<-1.3"], 16, 1, 1);
+				if(p.rap() < -0.8 && > -1.3) hInvariantPTLambdapPB["-1.3<yCM<-0.8"], 16, 1, 2);
+				if(p.rap() < -0.3 && > -0.8) hInvariantPTLambdapPB["-0.8<yCM<-0.3"], 16, 1, 3);
+				if(p.rap() < 0.8 && > 0.3) hInvariantPTLambdapPB["0.3<yCM<0.8"], 16, 1, 4);
+				if(p.rap() < 1.3 && > 0.8) hInvariantPTLambdapPB["0.8<yCM<1.3"], 16, 1, 5);
+				if(p.rap() > 1.3) hInvariantPTLambdapPB["1.3<yCM<1.8"], 16, 1, 6);
+				
+				if(p.rap() < -1.3) hInvariantPTLambdapPB["HighNeg"]->fill(partPt, pt_weight);
+				if(p.rap() < -0.8 && > -1.3) hInvariantPTLambdapPB["MidNeg"]->fill(partPt, pt_weight);
+				if(p.rap() < -0.3 && > -0.8) hInvariantPTLambdapPB["LowNeg"]->fill(partPt, pt_weight);
+				if(p.rap() < 0.8 && > 0.3) hInvariantPTLambdapPB["LowPos"]->fill(partPt, pt_weight);
+				if(p.rap() < 1.3 && > 0.8) hInvariantPTLambdapPB["MidPos"]->fill(partPt, pt_weight);
+				if(p.rap() > 1.3) hInvariantPTLambdapPB["HighPos"]->fill(partPt, pt_weight);
+				
+				break;
+			}
+		}
+		}
+		
+		for (Particle p : chargedParticles)
+		{
+			double partPt = p.pT() / GeV;
+			double pt_weight = 1. / (partPt * 2. * M_PI);
+			switch (p.pid()) {
+			case 3312: // Xi-
+			{
+				if(p.rap() < 0) hInvariantPTXi["pPB_-1.8<yCM<0"]->fill(partPt, pt_weight);
+				hInvariantPTXi["pPB_-1.8<yCM<1.8"]->fill(partPt, pt_weight);
+				if(p.rap() > 0) hInvariantPTXi["pPB_0<yCM<1.8"]->fill(partPt, pt_weight);
+				hInvariantPTXi["pPB_full"]->fill(partPt, pt_weight);
+				if(p.rap() < 0) hInvariantPTXi["pPB_low"]->fill(partPt, pt_weight);
+				if(p.rap() > 0) hInvariantPTXi["pPB_high"]->fill(partPt, pt_weight);
+				//TODO
+				
+				break;
+			}
+			case -3312: // Xi+
+			{
+				if(p.rap() < 0) hInvariantPTXi["pPB_-1.8<yCM<0"]->fill(partPt, pt_weight);
+				//TODO
+				
+				break;
+			}
+			case 3334: // Omega-
+			{
+				hInvariantPTOmega["pPB_-1.8<yCM<1.8"]->fill(partPt, pt_weight);
+				hInvariantPTOmega["pPB_full"]->fill(partPt, pt_weight);
+				//TODO
+				
+				break;
+			}
+			case -3334: // Omega+
+			{
+				hInvariantPTOmega["pPB_-1.8<yCM<1.8"]->fill(partPt, pt_weight);
+				hInvariantPTOmega["pPB_full"]->fill(partPt, pt_weight);
+				//TODO
+				
+				break;
+			}
+		}
+	}
+	return;
+	}
     }
+    
 
 
     /// Normalise histograms etc., after the run
     void finalize() {
 
-      normalize(_h["XXXX"]); // normalize to unity
-      normalize(_h["YYYY"], crossSection()/picobarn); // normalize to generated cross-section in fb (no cuts)
-      scale(_h["ZZZZ"], crossSection()/picobarn/sumW()); // norm to generated cross-section in pb (after cuts)
+      //normalize(_h["XXXX"]); // normalize to unity
+      //normalize(_h["YYYY"], crossSection()/picobarn); // normalize to generated cross-section in fb (no cuts)
+      //scale(_h["ZZZZ"], crossSection()/picobarn/sumW()); // norm to generated cross-section in pb (after cuts)
 
     }
 
