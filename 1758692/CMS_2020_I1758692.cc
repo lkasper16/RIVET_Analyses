@@ -501,6 +501,8 @@ namespace Rivet {
     /// Normalise histograms etc., after the run
     void finalize() {
 
+	Ncoll = 6.9;
+
       	if(sow["sow_pp"]->sumW() > 0) {
       	hInvariantPTK0S["pp_-1.8<yCM<0"]->scaleW(1. / sow["sow_pp"]->sumW());
 	hInvariantPTK0S["pp_-1.8<yCM<1.8"]->scaleW(1. / sow["sow_pp"]->sumW());
@@ -531,32 +533,32 @@ namespace Rivet {
 	}
 	
 	if(sow["sow_pPB"]->sumW() > 0) {
-	hInvariantPTK0S["pPB_-1.8<yCM<0"]->scaleW(1. / sow["sow_pPB"]->sumW());
-	hInvariantPTK0S["pPB_-1.8<yCM<1.8"]->scaleW(1. / sow["sow_pPB"]->sumW());
-	hInvariantPTK0S["pPB_0<yCM<1.8"]->scaleW(1. / sow["sow_pPB"]->sumW());
+	hInvariantPTK0S["pPB_-1.8<yCM<0"]->scaleW(1. / Ncoll * sow["sow_pPB"]->sumW());
+	hInvariantPTK0S["pPB_-1.8<yCM<1.8"]->scaleW(1. / Ncoll * sow["sow_pPB"]->sumW());
+	hInvariantPTK0S["pPB_0<yCM<1.8"]->scaleW(1. / Ncoll * sow["sow_pPB"]->sumW());
 		
-	hInvariantPTK0S["pPB_full"]->scaleW(1. / sow["sow_pPB"]->sumW());
-	hInvariantPTK0S["pPB_low"]->scaleW(1. / sow["sow_pPB"]->sumW());
-	hInvariantPTK0S["pPB_high"]->scaleW(1. / sow["sow_pPB"]->sumW());
+	hInvariantPTK0S["pPB_full"]->scaleW(1. / Ncoll * sow["sow_pPB"]->sumW());
+	hInvariantPTK0S["pPB_low"]->scaleW(1. / Ncoll * sow["sow_pPB"]->sumW());
+	hInvariantPTK0S["pPB_high"]->scaleW(1. / Ncoll * sow["sow_pPB"]->sumW());
 	
-	hInvariantPTLambda["pPB_-1.8<yCM<0"]->scaleW(1. / sow["sow_pPB"]->sumW());
-	hInvariantPTLambda["pPB_-1.8<yCM<1.8"]->scaleW(1. / sow["sow_pPB"]->sumW());
-	hInvariantPTLambda["pPB_0<yCM<1.8"]->scaleW(1. / sow["sow_pPB"]->sumW());
+	hInvariantPTLambda["pPB_-1.8<yCM<0"]->scaleW(1. / Ncoll * sow["sow_pPB"]->sumW());
+	hInvariantPTLambda["pPB_-1.8<yCM<1.8"]->scaleW(1. / Ncoll * sow["sow_pPB"]->sumW());
+	hInvariantPTLambda["pPB_0<yCM<1.8"]->scaleW(1. / Ncoll * sow["sow_pPB"]->sumW());
 		
-	hInvariantPTLambda["pPB_full"]->scaleW(1. / sow["sow_pPB"]->sumW());
-	hInvariantPTLambda["pPB_low"]->scaleW(1. / sow["sow_pPB"]->sumW());
-	hInvariantPTLambda["pPB_high"]->scaleW(1. / sow["sow_pPB"]->sumW());
+	hInvariantPTLambda["pPB_full"]->scaleW(1. / Ncoll * sow["sow_pPB"]->sumW());
+	hInvariantPTLambda["pPB_low"]->scaleW(1. / Ncoll * sow["sow_pPB"]->sumW());
+	hInvariantPTLambda["pPB_high"]->scaleW(1. / Ncoll * sow["sow_pPB"]->sumW());
 	
-	hInvariantPTXi["pPB_-1.8<yCM<0"]->scaleW(1. / sow["sow_pPB"]->sumW());
-	hInvariantPTXi["pPB_-1.8<yCM<1.8"]->scaleW(1. / sow["sow_pPB"]->sumW());
-	hInvariantPTXi["pPB_0<yCM<1.8"]->scaleW(1. / sow["sow_pPB"]->sumW());
+	hInvariantPTXi["pPB_-1.8<yCM<0"]->scaleW(1. / Ncoll * sow["sow_pPB"]->sumW());
+	hInvariantPTXi["pPB_-1.8<yCM<1.8"]->scaleW(1. / Ncoll * sow["sow_pPB"]->sumW());
+	hInvariantPTXi["pPB_0<yCM<1.8"]->scaleW(1. / Ncoll * sow["sow_pPB"]->sumW());
 		
-	hInvariantPTXi["pPB_full"]->scaleW(1. / sow["sow_pPB"]->sumW());
-	hInvariantPTXi["pPB_low"]->scaleW(1. / sow["sow_pPB"]->sumW());
-	hInvariantPTXi["pPB_high"]->scaleW(1. / sow["sow_pPB"]->sumW());
+	hInvariantPTXi["pPB_full"]->scaleW(1. / Ncoll * sow["sow_pPB"]->sumW());
+	hInvariantPTXi["pPB_low"]->scaleW(1. / Ncoll * sow["sow_pPB"]->sumW());
+	hInvariantPTXi["pPB_high"]->scaleW(1. / Ncoll * sow["sow_pPB"]->sumW());
 	
-	hInvariantPTOmega["pPB_-1.8<yCM<1.8"]->scaleW(1. / sow["sow_pPB"]->sumW());
-	hInvariantPTOmega["pPB_full"]->scaleW(1. / sow["sow_pPB"]->sumW());
+	hInvariantPTOmega["pPB_-1.8<yCM<1.8"]->scaleW(1. / Ncoll * sow["sow_pPB"]->sumW());
+	hInvariantPTOmega["pPB_full"]->scaleW(1. / Ncoll * sow["sow_pPB"]->sumW());
 	
 	hInvariantPTLambdapPB["-1.8<yCM<-1.3"]->scaleW(1. / sow["sow_pPB"]->sumW());
 	hInvariantPTLambdapPB["-1.3<yCM<-0.8"]->scaleW(1. / sow["sow_pPB"]->sumW());
@@ -650,6 +652,7 @@ namespace Rivet {
 	string beamOpt;
 	enum CollisionSystem {pp, pPB};
 	CollisionSystem collSys;
+	float Ncoll;
 
   };
 
